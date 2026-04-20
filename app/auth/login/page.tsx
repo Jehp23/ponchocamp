@@ -4,9 +4,10 @@ import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { Sparkles, Loader2 } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -42,9 +43,13 @@ export default function LoginPage() {
       <div className="flex flex-1 items-center justify-center p-8">
         <div className="w-full max-w-sm">
           <div className="mb-10">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/80 shadow-lg shadow-primary/20 mb-6">
-              <Sparkles className="h-6 w-6 text-primary-foreground" />
-            </div>
+            <Image
+              src="/logo.png"
+              alt="PonchoCamp"
+              width={56}
+              height={56}
+              className="rounded-xl shadow-lg mb-6"
+            />
             <h1 className="text-2xl font-bold text-foreground tracking-tight">Bienvenido de vuelta</h1>
             <p className="text-muted-foreground mt-2">Ingresa a tu cuenta de PonchoCamp</p>
           </div>
@@ -108,21 +113,17 @@ export default function LoginPage() {
       {/* Right side - Branding */}
       <div className="hidden lg:flex flex-1 items-center justify-center bg-gradient-to-br from-primary to-primary/80 p-12">
         <div className="max-w-md text-center text-primary-foreground">
+          <Image
+            src="/logo.png"
+            alt="PonchoCamp"
+            width={100}
+            height={100}
+            className="mx-auto mb-8 rounded-2xl shadow-2xl"
+          />
           <h2 className="text-4xl font-bold mb-4 tracking-tight">PonchoCamp</h2>
           <p className="text-xl text-primary-foreground/80 leading-relaxed">
             El espacio de aprendizaje y colaboracion del equipo de PonchoCapital
           </p>
-          <div className="mt-12 flex justify-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm">
-              <span className="text-2xl">📚</span>
-            </div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm">
-              <span className="text-2xl">💡</span>
-            </div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm">
-              <span className="text-2xl">🚀</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>

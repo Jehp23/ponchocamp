@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { 
@@ -11,8 +12,7 @@ import {
   Plus,
   Search,
   LogOut,
-  Star,
-  Sparkles
+  Star
 } from "lucide-react"
 import { useUser } from "@/components/user-provider"
 import { SearchDialog } from "@/components/search-dialog"
@@ -45,9 +45,13 @@ export function Sidebar() {
     <aside className="fixed left-0 top-0 z-30 h-screen w-64 bg-sidebar flex flex-col">
       {/* Logo */}
       <div className="flex items-center gap-3 px-5 py-5">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/80 shadow-md shadow-primary/20">
-          <Sparkles className="h-5 w-5 text-primary-foreground" />
-        </div>
+        <Image
+          src="/logo.png"
+          alt="PonchoCamp"
+          width={40}
+          height={40}
+          className="rounded-xl shadow-md"
+        />
         <div>
           <span className="font-bold text-lg text-foreground tracking-tight">PonchoCamp</span>
           <p className="text-xs text-muted-foreground">by PonchoCapital</p>
