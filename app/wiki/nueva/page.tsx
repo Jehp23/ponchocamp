@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Sidebar } from "@/components/sidebar"
-import { ArrowLeft, Save, Eye, Edit2, Loader2, FileTemplate } from "lucide-react"
+import { ArrowLeft, Save, Eye, Edit2, Loader2, LayoutTemplate } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { createClient } from "@/lib/supabase/client"
 import { useUser } from "@/components/user-provider"
@@ -167,7 +167,7 @@ export default function NewWikiPage() {
                 className="gap-2"
                 onClick={() => setShowTemplatePicker(true)}
               >
-                <FileTemplate className="h-4 w-4" />
+                <LayoutTemplate className="h-4 w-4" />
                 Plantilla
               </Button>
               <Button
